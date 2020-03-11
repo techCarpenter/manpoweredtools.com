@@ -1,6 +1,6 @@
 <template>
   <g-link class="logo" to="/">
-    <span class="logo__text">&larr; {{ $static.metadata.siteName }}</span>
+    <span>💪&nbsp;</span><span><strong>ManPowered</strong></span>
   </g-link>
 </template>
 
@@ -16,13 +16,16 @@ query {
 .logo {
   text-decoration: none;
   color: var(--body-color) !important;
-  font-size: 0.9em;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 
   &__image {
     vertical-align: middle;
     border-radius: 99px;
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     margin-right: 0.5em;
   }
 }

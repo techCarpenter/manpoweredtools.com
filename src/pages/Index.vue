@@ -1,24 +1,22 @@
 <template>
-  <Layout :show-logo="false">
-    <!-- Author intro -->
-    <Author :show-title="true" />
+  <Layout>
+    <Header />
 
-    <!-- List posts -->
+    <!-- List recent posts -->
     <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
     </div>
-
   </Layout>
 </template>
 
 <page-query>
 query {
-  posts: allPost(filter: { published: { eq: true }}) {
+  posts: allPost(filter: { published: { eq: true }}, limit: 5) {
     edges {
       node {
         id
         title
-        date (format: "MMMM DD, YYYY")
+        date (format: "MMM DD, YYYY")
         timeToRead
         description
         cover_image (width: 770, height: 380, blur: 10)
@@ -35,16 +33,15 @@ query {
 </page-query>
 
 <script>
-import Author from '~/components/Author.vue'
-import PostCard from '~/components/PostCard.vue'
+// import Author from '~/components/Author.vue'
+import PostCard from "~/components/PostCard.vue";
 
 export default {
   components: {
-    Author,
     PostCard
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: "Hello, world!"
   }
-}
+};
 </script>

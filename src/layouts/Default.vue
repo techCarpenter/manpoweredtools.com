@@ -1,31 +1,36 @@
 <template>
   <div id="app">
-
     <header class="header">
       <div class="header__left">
-        <Logo v-if="showLogo" /> 
+        <Logo v-if="showLogo" />
       </div>
-      
-      <div class="header__right">        
+
+      <div class="header__right">
         <ToggleTheme />
       </div>
     </header>
 
     <main class="main">
-      <slot/>
+      <slot />
     </main>
 
-    <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}. </span>
-      <span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span>
-    </footer>
+    <div class="sub-div">
+      <p>Enjoying the content? Subscribe for updates!</p>
+      <a class="sub-button button" href="https://manpoweredtools.substack.com">Subscribe</a>
+    </div>
 
+    <footer class="footer">
+      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
+      <span class="footer__links">
+        <a href="//manpoweredtools.substack.com">Newsletter</a>
+      </span>
+    </footer>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import ToggleTheme from '~/components/ToggleTheme.vue'
+import Logo from "~/components/Logo.vue";
+import ToggleTheme from "~/components/ToggleTheme.vue";
 
 export default {
   props: {
@@ -35,7 +40,7 @@ export default {
     Logo,
     ToggleTheme
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -45,7 +50,7 @@ export default {
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
-  top:0;
+  top: 0;
   z-index: 10;
 
   &__left,
@@ -72,14 +77,31 @@ export default {
   justify-content: center;
   padding: calc(var(--space) / 2);
   text-align: center;
-  font-size: .8em;
+  font-size: 0.8em;
 
   > span {
-    margin: 0 .35em;
+    margin: 0 0.35em;
   }
 
   a {
     color: currentColor;
   }
+}
+
+.sub-button {
+  background-color: var(--link-color);
+  color: #fff;
+  padding: 0.4em 1em;
+  border-radius: 6px;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.sub-div {
+  font-size: 1.2em;
+  margin: 1em auto;
+  text-align: center;
 }
 </style>

@@ -21,11 +21,6 @@
       </div>
     </div>
 
-    <div class="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
-
-    <Author class="post-author" />
   </Layout>
 </template>
 
@@ -59,7 +54,7 @@ query Post ($id: ID!) {
   post: post (id: $id) {
     title
     path
-    date (format: "MMMM DD, YYYY")
+    date (format: "MMM DD, YYYY")
     timeToRead
     tags {
       id
@@ -115,17 +110,5 @@ query Post ($id: ID!) {
       max-width: none;
     }
   }
-}
-
-.post-comments {
-  padding: calc(var(--space) / 2);
-
-  &:empty {
-    display: none;
-  }
-}
-
-.post-author {
-  margin-top: calc(var(--space) / 2);
 }
 </style>
