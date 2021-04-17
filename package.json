@@ -1,20 +1,22 @@
 {
-  "name": "hand-tools-blog",
-  "private": true,
+  "name": "manpoweredtools.com",
+  "version": "0.1.0",
+  "description": "Man Powered Tools website",
+  "main": "index.js",
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
-  "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/remark-prismjs": "^0.2.0",
-    "@gridsome/source-filesystem": "^0.6.0",
-    "@gridsome/transformer-remark": "^0.3.0",
-    "gridsome": "^0.7.0"
-  },
+  "keywords": [
+    "eleventy",
+    "ssg",
+    "static-site-generator"
+  ],
+  "author": "Brian DeVries",
+  "license": "MIT",
   "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0"
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6"
   }
 }
